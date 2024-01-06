@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "http://localhost:3000", // Use http instead of https
-        secure: true, // Add this line to disable SSL verification
+        secure: false, // Add this line to disable SSL verification
       },
     },
   },

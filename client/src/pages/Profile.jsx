@@ -67,13 +67,16 @@ function Profile() {
     e.preventDefault();
     try {
       dispatch(userUpdateStart());
-      const res = await fetch(`/api/user/update/${currentUser._id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(FormData),
-      });
+      const res = await fetch(
+        `/api/user/update/${currentUser._id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(FormData),
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         dispatch(userUpdateFailure(data));
@@ -89,9 +92,12 @@ function Profile() {
   const handleDeleteAccount = async () => {
     try {
       dispatch(userDeleteStart());
-      const res = await fetch(`/api/user/delete/${currentUser._id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `/api/user/delete/${currentUser._id}`,
+        {
+          method: "DELETE",
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         dispatch(userDeleteFailure(data));
@@ -105,7 +111,7 @@ function Profile() {
 
   const handleSignOut = async () => {
     try {
-      await fetch('/api/auth/signout')
+      await fetch("/api/auth/signout");
       dispatch(userSignOut())
     } catch (error) {
       console.log(error);
