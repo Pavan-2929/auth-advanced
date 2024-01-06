@@ -27,6 +27,10 @@ app.listen(process.env.PORT, () => {
   console.log("Server is started");
 });
 
+app.get('/', (req, res) => {
+  res.json("Hi there")
+})
+
 app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
 
