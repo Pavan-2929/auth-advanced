@@ -18,7 +18,7 @@ function Signup() {
     try {
       setLoading(true)
       setError(false)
-      const res = await fetch("/api/auth/signup", {
+      const res = await fetch("https://auth-server-jixq.onrender.com/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
