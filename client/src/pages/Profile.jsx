@@ -68,7 +68,7 @@ function Profile() {
     try {
       dispatch(userUpdateStart());
       const res = await fetch(
-        `/api/user/update/${currentUser._id}`,
+        `https://auth-server-jixq.onrender.com/api/user/update/${currentUser._id}`,
         {
           method: "POST",
           headers: {
@@ -93,7 +93,7 @@ function Profile() {
     try {
       dispatch(userDeleteStart());
       const res = await fetch(
-        `/api/user/delete/${currentUser._id}`,
+        `https://auth-server-jixq.onrender.com/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
         }
@@ -111,7 +111,7 @@ function Profile() {
 
   const handleSignOut = async () => {
     try {
-      await fetch("/api/auth/signout");
+      await fetch("https://auth-server-jixq.onrender.com/api/auth/signout");
       dispatch(userSignOut())
     } catch (error) {
       console.log(error);
