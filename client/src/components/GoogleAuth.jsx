@@ -14,7 +14,7 @@ function GoogleAuth() {
             const auth = getAuth(app);
             const result = await signInWithPopup(auth, provider)
             const res = await fetch(
-              "/api/auth/google",
+              "https://auth-server-jixq.onrender.com/api/auth/google",
               {
                 method: "POST",
                 headers: {
