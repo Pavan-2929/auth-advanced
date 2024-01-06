@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3000", // Use http instead of https
+        target: "https://auth-server-jixq.onrender.com", // Use http instead of https
         secure: false, // Add this line to disable SSL verification
       },
     },
